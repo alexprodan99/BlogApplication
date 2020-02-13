@@ -19,8 +19,9 @@ def post_list(request,tag_slug=None):
     #adding paginator
     tag = None
     if tag_slug:
+        print('tag_slug')
         tag = get_object_or_404(Tag, slug=tag_slug)
-        object_list = object_list.filter(tags__in=[tag])
+        posts = posts.filter(tags__in=[tag])
 
 
 
